@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bully-election-demo/static/css/main.3431c284.css",
+    "main.js": "/bully-election-demo/static/js/main.8a9b145a.js",
+    "index.html": "/bully-election-demo/index.html",
+    "main.3431c284.css.map": "/bully-election-demo/static/css/main.3431c284.css.map",
+    "main.8a9b145a.js.map": "/bully-election-demo/static/js/main.8a9b145a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3431c284.css",
+    "static/js/main.8a9b145a.js"
+  ]
+}
