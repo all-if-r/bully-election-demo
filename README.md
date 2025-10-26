@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# 🧠 Bully Election Algorithm Visualization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interactive visualization of the **Bully Election Algorithm** built with **React + TailwindCSS + Framer Motion**.
 
-## Available Scripts
+## 🔗 Live Demo
 
-In the project directory, you can run:
+Akses simulasi langsung di browser (tanpa install apa pun):
+[https://all-if-r.github.io/bully-election-demo](https://all-if-r.github.io/bully-election-demo)
 
-### `npm start`
+## 🚀 Cara pakai di halaman demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Auto-play**
+   Menjalankan seluruh proses pemilihan otomatis dari awal sampai leader baru diumumkan.
+2. **Previous step / Next step**
+   Jalan mundur / maju satu langkah supaya bisa jelasin ke orang lain pelan-pelan.
+3. **Fail current leader**
+   Mematikan node dengan ID paling tinggi yang masih hidup (seolah node itu crash).
+   Setelah itu jalankan election lagi dan lihat siapa jadi leader baru.
+4. Klik node (N1, N2, …)
+   Toggle statusnya `up/down` (hidup/mati).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 Ringkasan Algoritma Bully
 
-### `npm test`
+1. Node yang curiga leader mati akan mulai election. Misalnya Node 3.
+2. Node 3 kirim pesan **ELECTION** ke semua node dengan ID lebih besar (4, 5, 6).
+3. Node 4/5/6 balas **OK** = “aku hidup dan aku lebih kuat daripada kamu”.
+4. Node dengan ID terbesar yang masih aktif (misal Node 6) broadcast **COORDINATOR** ke semua node lain dan jadi leader resmi.
+5. Kalau leader itu mati (misal Node 6 dimatikan), nanti Node 5 yang bakal jadi leader, dan seterusnya.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🖥 Run locally (dev mode)
 
-### `npm run build`
+```bash
+git clone https://github.com/all-if-r/bully-election-demo.git
+cd bully-election-demo
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Tech stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React (Create React App)
+* TailwindCSS (utility-first styling)
+* Framer Motion (arrow animation, smooth motion)
+* GitHub Pages (deployment)
